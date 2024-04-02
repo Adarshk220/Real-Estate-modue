@@ -1,2 +1,2 @@
-# Real-Estate-modue
-Real Estate modue in odoo
+# Real-Estate-module
+Real Estate module in odoo
