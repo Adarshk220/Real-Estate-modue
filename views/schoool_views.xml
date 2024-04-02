@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="schoool_view_tree" model="ir.ui.view">
+        <field name="name">schoool.view.form</field>
+        <field name="model">schoool</field>
+        <field name="arch" type="xml">
+            <tree string="subject">
+                <field name="partner_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="schoool_view_form" model="ir.ui.view">
+        <field name="name">school.view.form</field>
+        <field name="model">schoool</field>
+        <field name="arch" type="xml">
+            <form string="subject">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="schoool_line_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="pass_mark"/>
+                                <field name="max_mark"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="schoool_action" model="ir.actions.act_window">
+        <field name="name">Manage schoool</field>
+        <field name="res_model">schoool</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--    <menuitem id="menu_school_root" name="School Management">-->
+    <!--        <menuitem id="menu_configuration_master" name="Configuration" sequence="10">-->
+    <menuitem id="menu_schoool" action="schoool_action" parent="menu_school_root"/>
+    <!--        </menuitem>-->
+    <!--    </menuitem>-->
+</odoo>
